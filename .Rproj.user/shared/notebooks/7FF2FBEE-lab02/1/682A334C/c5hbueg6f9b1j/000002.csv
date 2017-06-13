@@ -1,0 +1,14 @@
+"0","library(tidyverse, warn.conflicts = FALSE) "
+"0","library(plotly)"
+"0","data <- read.csv(file=""./series_from_imdb.csv"", header=TRUE, sep="","")"
+"0","tv_shows_resume <- group_by(data,series_name,season) %>%"
+"0","  summarize(eps = n(), median = median(UserRating, na.rm = T))"
+"0","g <- ggplot(tv_shows_resume, aes(season, series_name)) +"
+"0","  geom_point(aes(colour = median, size = median)) +"
+"0","  scale_colour_gradient(low = ""white"", high = ""black"") +"
+"0","  xlab('Temporada') + "
+"0","  ylab('    ')"
+"0","ggplotly(g)"
+"2","We recommend that you use the dev version of ggplot2 with `ggplotly()`
+Install it with: `devtools::install_github('hadley/ggplot2')`
+"

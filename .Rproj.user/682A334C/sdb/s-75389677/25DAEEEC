@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nlibrary(tidyverse, warn.conflicts = F)\nlibrary(plotly)\n\ndata <- read.csv(file=\"./series_from_imdb.csv\", header=TRUE, sep=\",\")\ntv_shows_resume <- group_by(data,series_name,season) %>%\n  summarize(eps = n(), median = median(UserRating, na.rm = T))\n\nshinyServer(function(input, output) {\n\n  output$distPlot <- renderPlotly({\n    \n    if(input$type == \"Eps\") {\n      \n      g <- data %>% \n        filter(series_name %in% input$filtros) %>% \n        ggplot(aes(series_ep, UserRating)) +\n        geom_point(aes(colour = series_name)) +\n        geom_line(aes(colour = series_name, linetype = series_name)) +\n        xlab('Temporada') + \n        ylab('    ')\n      \n      ggplotly(g)\n      \n    } else {\n      g <- tv_shows_resume %>% \n        filter(series_name %in% input$filtros) %>% \n        ggplot(aes(season, series_name)) +\n        geom_point(aes(colour = median, size = median)) +\n        scale_colour_gradient(low = \"white\", high = \"black\") +\n        xlab('Temporada') + \n        ylab('    ')\n      \n      ggplotly(g)\n    }\n\n  })\n\n})\n",
+    "created" : 1497323723891.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1327536225",
+    "id" : "25DAEEEC",
+    "lastKnownWriteTime" : 1497329071,
+    "last_content_update" : 1497329071530,
+    "path" : "C:/Users/juan0/Projects/Ad1/Lab02CP02/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

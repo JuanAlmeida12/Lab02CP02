@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nlibrary(plotly)\n\nshinyUI(fluidPage(\n\n  # Application title\n  titlePanel(\"Lab02CP02\"),\n  h2(\"Comparando séries por episodio ou por temporada\"),\n  div(\"Você pode selecionar suas séries favoritas e comparalas por episódios ou por temporada.\"),\n  # Sidebar with a slider input for number of bins\n  sidebarLayout(\n    sidebarPanel(\n      selectInput(\"filtros\", \"Séries\", data$series_name, selected = \"Sherlock\", selectize = TRUE, multiple = TRUE),\n      selectInput(\"type\", \"Séries\", c(\"Eps\",\"Temporadas\"), selected = \"Eps\", selectize = TRUE, multiple = FALSE)\n    ),\n    # Show a plot of the generated distribution\n    mainPanel(tabsetPanel(type=\"tab\", \n                          \n                          tabPanel(\"Plot\", plotlyOutput(\"distPlot\"))\n    )\n  )\n))\n)",
+    "created" : 1497323723053.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1441465728",
+    "id" : "887E663C",
+    "lastKnownWriteTime" : 1497329229,
+    "last_content_update" : 1497329229569,
+    "path" : "C:/Users/juan0/Projects/Ad1/Lab02CP02/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

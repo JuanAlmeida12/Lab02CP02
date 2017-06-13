@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1497327834018.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "D5A6E1C2",
+    "lastKnownWriteTime" : 6877972376302346102,
+    "last_content_update" : 1497327834018,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "8366E008",
+        "caption" : "tv_shows_resume",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=tv_shows_resume&cache_key=8366E008",
+        "displayedObservations" : "1947",
+        "environment" : "",
+        "object" : "tv_shows_resume",
+        "preview" : "0",
+        "totalObservations" : "1947",
+        "variables" : "4"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

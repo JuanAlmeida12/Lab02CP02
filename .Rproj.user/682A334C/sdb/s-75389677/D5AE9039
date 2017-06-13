@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Lab02\"\noutput: html_notebook\n---\n\n```{r, fig.width=6, fig.height=6}\nlibrary(tidyverse, warn.conflicts = FALSE) \nlibrary(plotly)\n\ndata <- read.csv(file=\"./series_from_imdb.csv\", header=TRUE, sep=\",\")\n\ntv_shows_resume <- group_by(data,series_name,season) %>%\n  summarize(eps = n(), median = median(UserRating, na.rm = T))\n\ng <- ggplot(tv_shows_resume, aes(season, series_name)) +\n  geom_point(aes(colour = median, size = median)) +\n  scale_colour_gradient(low = \"white\", high = \"black\") +\n  xlab('Temporada') + \n  ylab('    ')\nggplotly(g)\n```\n\n",
+    "created" : 1497324672995.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1590884241",
+    "id" : "D5AE9039",
+    "lastKnownWriteTime" : 1497324580,
+    "last_content_update" : 1497325142503,
+    "path" : "C:/Users/juan0/Projects/Ad1/Lab02/lab02.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "chunk_output_type" : "inline"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
